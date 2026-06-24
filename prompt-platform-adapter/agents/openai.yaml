@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prompt Platform Adapter"
+  short_description: "Adapt visual prompts across image platforms."
+  default_prompt: "Use $prompt-platform-adapter to convert this visual brief into platform-ready prompts with conversion notes and risk controls."
