@@ -1,0 +1,5 @@
+interface:
+  display_name: "Visual Reference Prompt Director"
+  short_description: "Turn reference visuals into prompt DNA."
+  default_prompt: "Use $visual-reference-prompt-director to analyze this reference image into visual DNA, risk notes, and platform-ready prompts."
+
