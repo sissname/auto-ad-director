@@ -1,0 +1,4 @@
+interface:
+  display_name: "Auto Ad Director"
+  short_description: "汽车广告视觉导演：生成、诊断和迭代汽车广告提示词。"
+  default_prompt: "Use $auto-ad-director to create or improve a cinematic automotive campaign prompt package from this brief."
