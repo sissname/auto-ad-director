@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Image Quality Director"
+  short_description: "审查 AI 生图质量、定位失败原因并给出下一轮修复方向。"
+  default_prompt: "Use $ai-image-quality-director to score this AI-generated image, diagnose failures, and propose the next repair prompt."
