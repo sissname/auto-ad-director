@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brand Visual Research Builder"
+  short_description: "构建基于官方页面与媒体资料的品牌视觉研究库，并翻译为可执行 prompt 规则。"
+  default_prompt: "Use $brand-visual-research-builder to research this brand from official pages, preserve source links, and turn the findings into prompt translation rules and failure risks."
