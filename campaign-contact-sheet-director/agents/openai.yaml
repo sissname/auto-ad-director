@@ -1,0 +1,4 @@
+interface:
+  display_name: "Campaign Contact Sheet Director"
+  short_description: "为系列广告生成统一锚点、多格分镜规划和逐格平台提示输出。"
+  default_prompt: "Use $campaign-contact-sheet-director to turn this brief into a unified 9-frame campaign contact sheet with per-frame shot logic and platform prompts."
