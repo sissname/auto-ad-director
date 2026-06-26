@@ -3,7 +3,7 @@ name: brand-concept-visual-director
 description: Generate, compare, review, and iterate AI visual direction drafts for early-stage brand concept exploration. Use when turning brand positioning, audience, references, preferences, forbidden zones, mood words, or rough logo/sketch ideas into 3-5 visual direction prompts, creative director review forms, next-round questions, brand moodboards, image-generation prompt packages, or when avoiding premature final-logo claims and SVG sketch overconfidence. 中文适用：品牌方向稿、品牌视觉探索、AI 方向图、品牌定位转视觉 prompt、参考图转方向、创意总监评审、3-5 个方向方案、logo 探索前期草案、禁止把 SVG 示意当最终专业 logo。
 ---
 
-# Brand Concept Visual Director
+# 品牌方向稿视觉导演（Brand Concept Visual Director）
 
 ## 核心工作流
 
@@ -26,7 +26,7 @@ description: Generate, compare, review, and iterate AI visual direction drafts f
 - 输出目标：方向稿、moodboard prompt、社媒视觉、包装方向、空间方向、logo 前期探索。
 - 文字/logo 策略：默认不要求图像模型生成精确文字或最终 logo。
 
-## Reference Routing
+## 参考资料路由
 
 - 读 `references/brand-concept-framework.md`：所有方向稿任务都要读。
 - 读 `references/reference-and-logo-boundaries.md`：有参考图、logo、SVG、草图、品牌资产、不可照抄项时读。
@@ -37,7 +37,7 @@ description: Generate, compare, review, and iterate AI visual direction drafts f
 
 ## 输出格式
 
-### 品牌方向稿包
+### 品牌方向稿交付包
 
 ```text
 输入理解：
