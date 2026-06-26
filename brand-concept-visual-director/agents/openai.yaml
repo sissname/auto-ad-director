@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brand Concept Visual Director"
+  short_description: "Generate brand concept visual directions."
+  default_prompt: "Use $brand-concept-visual-director to turn this brand positioning, references, and constraints into 3-5 visual direction prompts with creative review notes."
