@@ -1,4 +1,4 @@
 interface:
-  display_name: "Brand Concept Visual Director"
-  short_description: "Generate brand concept visual directions."
-  default_prompt: "Use $brand-concept-visual-director to turn this brand positioning, references, and constraints into 3-5 visual direction prompts with creative review notes."
+  display_name: "品牌方向稿视觉导演"
+  short_description: "生成 3-5 个品牌方向稿与创意评审。"
+  default_prompt: "使用 $brand-concept-visual-director 把这份品牌定位、参考图和限制条件转成 3-5 个视觉方向 prompt，并附创意总监评审。"
