@@ -1,63 +1,188 @@
-# 基准测试套件（Benchmark Suite）
+# Benchmark Suite
 
-用于验证该 skill 是否能帮助用户选择品牌方向，而不是直接承诺最终 logo。
+Use this reference to self-test the skill or to create realistic practice tasks. Mature output should include research-backed style cues, a style anchor, shot logic, platform-aware prompts, negative risks, and iteration guidance.
 
-## Smoke Prompt 1：阅读品牌方向稿
+## Scoring Rubric
 
-```text
-Use $brand-concept-visual-director. 品牌是一个年轻人的阅读陪伴产品，希望温柔、可信、不学术、不鸡汤。请给 3 个 AI 方向稿 prompt 和创意总监评审。
-```
+Score each response from 1-5:
 
-通过标准：
+- Brief fit: answers the actual vehicle, brand, platform, and deliverable.
+- Research use: uses `campaign-research-bank.md` or clearly states when a brand is only archetype-backed.
+- Visual specificity: has location, light, lens, material, and composition.
+- Automotive realism: protects wheels, proportions, reflections, logo/text areas.
+- Brand maturity: tone fits the brand/segment, not generic luxury.
+- Platform execution: syntax and language match target platforms.
+- Iteration usefulness: includes risks, repair path, or test variants when appropriate.
 
-- 输出 3 个差异明确方向。
-- 每个方向有 prompt、风险、下一轮问题。
-- 不承诺最终 logo。
+Professional threshold: average 4.2+, with Automotive realism and Brand maturity both at least 4.
 
-## Smoke Prompt 2：护肤品牌参考图转方向
+## Benchmark Tasks
 
-```text
-Use $brand-concept-visual-director. 护肤品牌，关键词是水感、敏感肌、科学但不医院。参考图只借透明材质和柔光，不复制版式。输出 4 个方向。
-```
+### 1. Xiaomi SU7 Shanghai Rain Night
 
-通过标准：
+Task: Create a 6-shot campaign prompt bible for Xiaomi SU7 in Shanghai rainy blue-hour streets, output Midjourney and Nano Banana.
 
-- 明确参考图只借哪些元素。
-- 有禁区和不可复制项。
-- 方向能区分科学、日常、材质、情绪。
+Expected qualities:
 
-## Smoke Prompt 3：SVG 草图探索
+- Tech-lifestyle performance, not old luxury.
+- Wet asphalt, glass reflections, clean speed, phone-like polish.
+- No random Chinese text or warped wheels.
 
-```text
-Use $brand-concept-visual-director. 我有一个开口圆形 SVG 草图，想做品牌 logo 方向。请不要直接做最终 logo，先给方向稿和下一轮问题。
-```
+### 2. Xiaomi YU7 Bright Tech Launch
 
-通过标准：
+Task: Create a social-first launch contact sheet for a Xiaomi YU7-style SUV using bright product colors and clean modern roads.
 
-- 明确 SVG 不是最终 logo。
-- 提取符号母题。
-- 给出生图方向和后续专业设计动作。
+Expected qualities:
 
-## Acceptance Benchmark 4：AI 工具去 SaaS 模板
+- Consumer-electronics polish, precise geometry, fresh color accents.
+- SUV confidence without family-MPV softness.
+- Clean typography areas only, no generated slogans.
 
-```text
-Use $brand-concept-visual-director. AI 效率工具，想聪明、清爽、可信，但不要蓝紫 SaaS 渐变、不要抽象光球。给 5 个方向并评审。
-```
+### 3. NIO ET9 Executive Smart Luxury
 
-通过标准：
+Task: Produce a client-ready prompt bible for a NIO ET9-style executive EV.
 
-- 避免 SaaS 模板。
-- 输出 5 个方向。
-- 有评审表和淘汰/保留建议。
+Expected qualities:
 
-## Acceptance Benchmark 5：咖啡生活方式品牌
+- Executive smart luxury, quiet CBD arrival, refined cabin comfort.
+- Warm premium technology rather than cold sci-fi.
+- Clear shot system: hero, interior, detail, human, social crop.
 
-```text
-Use $brand-concept-visual-director. 社区咖啡品牌，不要冷冰冰精品咖啡，要日常关系和街角温度。输出 3 个方向 prompt。
-```
+### 4. NIO Interior Comfort Support Shot
 
-通过标准：
+Task: Write one generic Chinese prompt for a NIO-style rear-cabin executive comfort image.
 
-- 方向体现社区关系。
-- 避免网红咖啡店模板。
-- 明确文字/logo 后期处理。
+Expected qualities:
+
+- Spacious cabin, soft ambient light, composed professional user.
+- No random UI text; readable luxury materials.
+- Protect hands, reflections, seat geometry.
+
+### 5. Li Auto L9 Family Flagship
+
+Task: Create a hero and interior support shot for Li Auto L9-style family flagship comfort.
+
+Expected qualities:
+
+- Family premium, safe weekend context, warm light.
+- Cabin readability and six-seat spaciousness.
+- No racing cues or lonely fashion editorial mood.
+
+### 6. Audi A6 e-tron Light Design
+
+Task: Create 4 prompts around Audi-like premium lighting: hero exterior, light-bar macro, urban reflection, social crop.
+
+Expected qualities:
+
+- Progressive precision, illuminated rings/light-bar logic, cool architecture.
+- Macro detail treats lighting as technology jewelry.
+- Avoid fake logo generation and overdone neon.
+
+### 7. Audi Architecture Contact Sheet
+
+Task: Build a 12-frame contact sheet for a cold-tech Audi-like EV campaign.
+
+Expected qualities:
+
+- Glass, black/silver paint, crisp hard shadows, disciplined composition.
+- Mix hero, macro, talent, reflection, interior, and environment.
+- Clean borders, no captions.
+
+### 8. Porsche 911 Mountain Performance
+
+Task: Convert a generic "red sports car cinematic" prompt into a Porsche-like mountain performance campaign without exact badges.
+
+Expected qualities:
+
+- Sculpted motion, road grip, low raking light, asphalt texture.
+- Clean emblem area rather than fake badge.
+- Performance desire without hiding body geometry.
+
+### 9. Porsche Platform Adaptation
+
+Task: Convert a Porsche-like performance prompt into Midjourney and Jimeng/即梦.
+
+Expected qualities:
+
+- MJ uses compact English and valid parameters.
+- Jimeng uses fluent Chinese visual direction.
+- Both include no-fake-logo and grounded-wheel constraints.
+
+### 10. Mercedes-Benz S-Class Executive Proposal
+
+Task: Create a client proposal summary plus shot list for a Mercedes-Benz S-Class-style executive luxury campaign.
+
+Expected qualities:
+
+- Refined detail, comfort, status, silence.
+- Hotel/museum/polished-stone settings, soft highlights, warm cabin.
+- Mature human tone, no noisy youth styling.
+
+### 11. Mercedes-Maybach Comfort Detail
+
+Task: Write a premium interior detail prompt for a Maybach-like rear cabin.
+
+Expected qualities:
+
+- Crafted comfort, quiet luxury, soft material tactility.
+- No cramped cabin or random UI text.
+- Warm interior spill, chrome/wood/leather restraint.
+
+### 12. Failed Generation Repair: Wheels and Floating Car
+
+Task: The generated image has a beautiful rainy street, but the car floats and the wheels are broken. Repair the prompt and provide A/B variants.
+
+Expected qualities:
+
+- Diagnosis identifies ground contact and wheel geometry.
+- A keeps concept; B strengthens staging.
+- Minimal rewrite, targeted constraints.
+
+### 13. Failed Generation Repair: Logo/Text and Reflection
+
+Task: The car looks good, but the grille text is gibberish and wet-ground reflections create a duplicate vehicle. Repair the prompt.
+
+Expected qualities:
+
+- Replaces exact text request with clean logo/text area.
+- Clarifies real car versus reflection.
+- Adds "no duplicate real vehicle" and reflection logic.
+
+### 14. Reference Image Breakdown
+
+Task: Given a described reference shot with a low-angle EV beside glass architecture and a model at the door, extract reusable visual DNA and produce MJ + Chinese model prompts.
+
+Expected qualities:
+
+- Separates subject hierarchy, composition, light, lens, material, risks.
+- Does not invent exact camera metadata.
+- Converts reference into reusable prompt rules.
+
+### 15. Commercial Handoff Package
+
+Task: Produce a handoff package for another designer to continue a premium Chinese EV campaign.
+
+Expected qualities:
+
+- Locked decisions, final prompts, do-not-change list, open tests.
+- Clear brand territory and negative risks.
+- Useful enough for another agent/designer without extra context.
+
+## Self-Test Procedure
+
+1. Pick one benchmark task.
+2. Load only the references needed for that task.
+3. Draft the response.
+4. Score with the rubric.
+5. Revise once if any category is below 4 or if average is below 4.2.
+6. Record what the skill failed to make easy, then update the relevant reference if needed.
+
+## Common Maturity Failures
+
+- The answer is only a prompt, with no style anchor or shot logic.
+- Brand tone is generic and could fit any car.
+- Research-backed brands are treated the same as archetype-only brands.
+- Negative prompt is pasted without scene-specific risks.
+- Platform syntax is mixed up.
+- The response ignores output role: hero, support, detail, contact sheet, prompt bible, or handoff.
+- It overuses "cinematic" but under-specifies light, lens, material, and location.
