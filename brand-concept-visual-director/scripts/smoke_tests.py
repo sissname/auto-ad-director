@@ -15,7 +15,7 @@ REQUIRED_FILES = [
 ]
 
 MARKERS = {
-    "SKILL.md": ["输入检查清单", "品牌方向稿包", "Logo 前期探索安全输出", "专业质量门"],
+    "SKILL.md": ["输入检查清单", "品牌方向稿交付包", "Logo 前期探索安全输出", "专业质量门"],
     "references/benchmark-suite.md": ["Smoke Prompt 1", "Smoke Prompt 2", "Smoke Prompt 3"],
     "references/examples.md": ["示例 1", "示例 2", "示例 3"],
 }
