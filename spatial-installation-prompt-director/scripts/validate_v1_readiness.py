@@ -11,6 +11,7 @@ REQUIRED_FILES = [
     "references/scenario-playbooks.md",
     "references/site-intake-and-traffic-flow.md",
     "references/prompt-bible-examples.md",
+    "references/proposal-summary-playbook.md",
     "references/examples.md",
     "references/benchmark-suite.md",
     "references/quality-scorecard.md",
@@ -33,6 +34,13 @@ SCORECARD_MARKERS = [
     "动线可走性",
     "拍照传播性",
     "商业成熟度",
+]
+
+PROPOSAL_MARKERS = [
+    "提案摘要固定六段",
+    "过会摘要写法",
+    "常见空话替换表",
+    "为什么成立：",
 ]
 
 CASE_MARKERS = [
@@ -72,6 +80,7 @@ def main() -> int:
 
     require_contains("SKILL.md", SKILL_MARKERS, failures)
     require_contains("references/quality-scorecard.md", SCORECARD_MARKERS, failures)
+    require_contains("references/proposal-summary-playbook.md", PROPOSAL_MARKERS, failures)
     require_contains("references/case-library.md", CASE_MARKERS, failures)
     require_contains("references/benchmark-suite.md", BENCHMARK_MARKERS, failures)
 

@@ -11,6 +11,7 @@ REQUIRED_FILES = [
     "references/scenario-playbooks.md",
     "references/site-intake-and-traffic-flow.md",
     "references/prompt-bible-examples.md",
+    "references/proposal-summary-playbook.md",
     "references/examples.md",
     "references/benchmark-suite.md",
 ]
@@ -39,6 +40,11 @@ REQUIRED_PHRASES = {
         "现场照片 intake 最低要求",
         "文字 brief intake 最低要求",
         "动线判断四步法",
+    ],
+    "references/proposal-summary-playbook.md": [
+        "提案摘要固定六段",
+        "常见空话替换表",
+        "Fail if",
     ],
 }
 

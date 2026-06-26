@@ -1,28 +1,42 @@
 # Spatial Installation Prompt Director
 
-Spatial Installation Prompt Director 是一个面向商业空间提案与 AI 效果图生成的 Codex skill，专门处理商场美陈、快闪店、展陈空间和沉浸通道的 prompt direction。
+`Spatial Installation Prompt Director` 是一个把商场美陈、快闪店、展陈空间、沉浸通道 brief，转成空间效果图 prompt 与提案摘要的 Codex skill。
 
-它的目标不是输出几句“空间感提示词”，而是把场地照片、文字 brief、失败效果图或已有方向，拆成入口、主装置、灯光、地贴、动线、拍照点六区联动的可执行交付。
+它支持两类常见输入：
+
+- 现场照片或场地条件
+- 纯文字 brief、活动主题或方向描述
+
+它默认把任务拆成六个核心交付区：
+
+- 入口
+- 主装置
+- 灯光
+- 地贴
+- 动线
+- 拍照点
 
 ## 适合谁
 
-- 在做商场中庭美陈、品牌快闪、展陈提案、沉浸式通道方向的人
-- 需要把现场照片或文字 brief 快速转成效果图 prompt 和提案摘要的团队
-- 想要专业评审包、案例迁移、下一轮修复策略，而不是只要一句 prompt 的使用者
+- 做商场美陈和中庭活动方向的人
+- 做品牌快闪和展陈提案的人
+- 需要把空间概念快速转成 AI 效果图 prompt 的人
+- 需要把空间方向写成客户可读摘要的人
 
-## 能解决什么问题
+## 解决什么问题
 
-- 从商场美陈、快闪、展陈、沉浸通道 brief 生成可执行 prompt package
-- 兼容现场照片 intake 和文字 brief intake
-- 输出入口、主装置、灯光、地贴、动线、拍照点六区 prompt
-- 生成 Proposal Summary，支持客户提案摘要
-- 对弱方向或失败效果图做专业评审和最小修复动作
-- 避免 generic 灯带隧道、廉价乐园风、无动线雕塑岛
+- 把抽象空间概念翻成可执行 prompt
+- 把现场照片里的入口、扶梯、柱网、人流限制纳入方案
+- 避免只有“漂亮空间图”，没有入口识别、动线逻辑和传播点
+- 帮用户同时拿到效果图方向和提案摘要
 
-## 目录结构
+## 当前包含
 
 ```text
 spatial-installation-prompt-director/
+├─ .gitignore
+├─ LICENSE
+├─ README.md
 ├─ SKILL.md
 ├─ agents/
 │  └─ openai.yaml
@@ -30,6 +44,7 @@ spatial-installation-prompt-director/
 │  ├─ benchmark-suite.md
 │  ├─ case-library.md
 │  ├─ examples.md
+│  ├─ proposal-summary-playbook.md
 │  ├─ prompt-bible-examples.md
 │  ├─ quality-scorecard.md
 │  ├─ scenario-playbooks.md
@@ -40,55 +55,37 @@ spatial-installation-prompt-director/
    └─ validate_v1_readiness.py
 ```
 
-## 安装
+## 操作步骤
 
-复制到 Codex skills 目录：
+1. 明确场景类型：`Mall Display`、`Pop-up`、`Exhibition`、`Immersive Corridor`。
+2. 明确输入类型：现场照片、文字 brief、已有方向稿，还是失败效果图。
+3. 先锁定统一 style anchor，再拆六区输出。
+4. 需要客户摘要时，按 `proposal-summary-playbook.md` 输出，不只给视觉形容词。
+5. 提交前用 smoke tests 和 v1 readiness 做一次自检。
 
-```powershell
-Copy-Item -Recurse -Force . "$env:USERPROFILE\\.codex\\skills\\spatial-installation-prompt-director"
-```
+## 常见坑
 
-然后在 Codex 里使用：
-
-```text
-Use $spatial-installation-prompt-director to turn a mall, pop-up, exhibition, or immersive corridor brief into spatial prompts and proposal-ready summaries.
-```
-
-中文也可以直接用：
-
-```text
-用 spatial-installation-prompt-director 帮我把这张商场中庭现场照片做成一套入口、主装置、灯光、地贴、动线和拍照点的提案级效果图 prompt。
-```
-
-## 交付原则
-
-- 必须先处理真实场地限制，再谈概念气质
-- 入口、主装置、灯光、地贴、动线、拍照点必须共享同一套 style anchor
-- 拍照点必须服务传播、入口识别或导流中的至少一个目标
-- logo、精细导视、长文案默认留后期，不把模型文字能力当成交付核心
-- 发现失败图时，优先输出专业评审包和最小修复动作
+- 只做漂亮主装置，不解释入口和动线。
+- 把任何空间都画成通用灯带隧道。
+- 假设模型能稳定生成 logo、导视文案和精确文字。
+- 无视现场柱子、扶梯、吊挂和消防限制。
 
 ## 本地验证
 
 ```powershell
 $env:PYTHONUTF8='1'
-python C:\Users\windows\.codex\skills\.system\skill-creator\scripts\quick_validate.py C:\Users\windows\.codex\skills\spatial-installation-prompt-director
 python C:\Users\windows\.codex\skills\spatial-installation-prompt-director\scripts\smoke_tests.py
 python C:\Users\windows\.codex\skills\spatial-installation-prompt-director\scripts\validate_v1_readiness.py
 ```
 
-预期结果：
+如果要跑 `quick_validate.py`，当前环境需要可用的 `PyYAML`。
 
-```text
-Skill is valid!
-Smoke tests passed.
-v1 readiness passed.
-```
+## 原始来源
+
+- 技能路线图：`J:\005-Auto-Ad-Director-Skill-发布归档\00-总览索引\NEXT-SKILL-ROADMAP.md`
+- 项目归档总览：`J:\005-Auto-Ad-Director-Skill-发布归档\00-总览索引\README.md`
+- 相关候选记录：`J:\005-Auto-Ad-Director-Skill-发布归档\03-外部记录\skill-candidate-ideas.json`
 
 ## English Summary
 
-This skill helps Codex act as a spatial-installation prompt director for mall displays, pop-ups, exhibitions, and immersive corridors. It turns site photos or text briefs into entrance, installation, lighting, floor-graphic, traffic-flow, photo-point prompts, proposal summaries, review packages, and repair strategies.
-
-## License
-
-MIT
+This skill turns mall display, pop-up, exhibition, and immersive corridor briefs into spatial prompt packages and proposal-ready summaries. It supports both site-photo intake and text-only briefs, and it structures outputs around entrance, device, lighting, floor graphic, traffic flow, and photo point logic.

@@ -63,7 +63,10 @@ description: Turn mall displays, pop-ups, exhibitions, immersive corridors, site
 - 只要涉及具体场景，就读 `references/scenario-playbooks.md`，不要把展陈空间的逻辑硬套给快闪店。
 - 输入里出现现场照片、原始场地描述、扶梯中庭、入口视线、人流组织时，读 `references/site-intake-and-traffic-flow.md`。
 - 用户要求完整交付包、Prompt Bible、提案结构或多区成套输出时，读 `references/prompt-bible-examples.md`。
+- 用户要把视觉方向翻成客户能读懂的提案摘要、过会摘要或执行摘要时，读 `references/proposal-summary-playbook.md`。
 - 用户要参考现成格式，或我需要一个安全的中文输出骨架时，读 `references/examples.md`。
+- 用户要求判断“能不能提案”“哪一张能留”“哪里要修”时，读 `references/quality-scorecard.md`。
+- 用户要求复用历史空间逻辑、迁移类似案例，或我需要更稳的修正路径时，读 `references/case-library.md`。
 - 做自测、验收、回归时，读 `references/benchmark-suite.md`。
 
 ## 输出模式
@@ -233,3 +236,11 @@ Negative risks：
 - 有没有主动避开通用灯带隧道、廉价乐园风、无动线雕塑岛、假 logo 导视。
 
 任一项答不上来，就不要当作专业版交付。
+
+## 默认策略
+
+- 用户没指定场景类型时，优先按 `Mall Display` 处理商场中庭，按 `Pop-up` 处理店前区或短期活动，按 `Exhibition` 处理内容型展陈，按 `Immersive Corridor` 处理线性通道。
+- 用户没给平台时，先输出通用中文 prompt，再补一个 Midjourney 简版，避免把平台参数当成空间逻辑本身。
+- 用户只给一句主题时，先补齐空间类型、主要人群、入口记忆点和导流目标，再开始写六区方案。
+- 用户只要漂亮效果图时，也要最少交代入口、主装置和动线三者关系，否则不算可提案方向。
+- 真实品牌、logo、长文案、导视文字默认建议后期补字，不承诺模型直接稳定生成。
