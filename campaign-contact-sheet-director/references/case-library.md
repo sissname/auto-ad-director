@@ -1,53 +1,56 @@
 # Case Library
 
-当你想快速套用成熟结构时，优先参考以下案例，再结合当前 brief 做重写，而不是机械复用。
+## 适合谁
 
-## 案例 1：高端汽车发布主视觉套图
+- 已经有 brief，但想借现成案例快速校正结构的人
+- 做到一半发现格子逻辑失衡，想找修正抓手的人
 
-- 场景：advertising
-- 格数：9
-- 核心锚点：冷蓝夜景、湿地反射、低机位、硬边轮廓光、负空间标题区
-- 适用任务：新能源轿跑、性能车、发布主视觉
-- Transfer：hero + motion + detail + environment + social crop 的节奏最稳
-- Repair logic：如果画面太散，先统一地面反射和机位，再统一色温
-- Risk control：避免把所有格都做成高速追拍
+## 解决什么问题
 
-## 案例 2：高端护肤 launch board
+- 把常见 campaign 场景沉淀成可迁移的分格方法
+- 避免每次都从零猜镜头结构
 
-- 场景：product
-- 格数：6 或 9
-- 核心锚点：乳白扩散、半透明液体、玻璃折射、临床信任感
-- 适用任务：精华、面霜、安瓶、修护系列
-- Transfer：hero still life + macro + usage + packshot 的组合最有效
-- Repair logic：如果 detail 像电商图，先把背景、光线和留白拉回品牌体系
-- Risk control：包装文字优先留白后期补字
+## 案例 1：雨夜汽车 9 格广告板
 
-## 案例 3：时尚鞋履夜跑 campaign
+- 症状：画面都很帅，但全部像主 KV
+- Transfer：保留冷色夜雨、35mm hero、湿地反射
+- Repair logic：把第 2、5、8 格改成 detail、environment、social crop
+- Risk control：不要让霓虹颜色乱跳，不要突然切到白天
 
-- 场景：fashion
-- 格数：12
-- 核心锚点：城市夜色、反光地面、运动姿态、人物态度与鞋履并重
-- 适用任务：跑鞋、机能鞋、运动服饰
-- Transfer：portrait、motion、detail、social crop 四线并行
-- Repair logic：如果人物太强压住鞋，增加脚部特写和中近景鞋履主导镜头
-- Risk control：避免直接借用汽车广告的金属反射语言
+## 案例 2：护肤精华 6 格产品发布
 
-## 案例 4：香氛快闪中庭提案
+- 症状：材质好看，但卖点不清楚
+- Transfer：保留玻璃高透和液体质感
+- Repair logic：补一格滴液 macro 和一格手部使用关系
+- Risk control：不要让道具比瓶身更抢
 
-- 场景：spatial
-- 格数：16
-- 核心锚点：入口记忆点、灯带节奏、半透明材质、拍照点、导览动线
-- 适用任务：商场快闪、品牌中庭装置、体验展
-- Transfer：4 个章节最稳，入口 / 主装置 / 体验 / 传播 各成一章
-- Repair logic：如果像概念图拼贴，先按动线重建章节，再补 detail
-- Risk control：人物比例、层高、装置尺度必须单独检查
+## 案例 3：秋冬 lookbook 12 格时尚系列
 
-## 案例 5：珠宝 gallery light campaign
+- 症状：人物都好看，但姿态和版面节奏单一
+- Transfer：保留低饱和灰棕色调和羊毛材质
+- Repair logic：补 full look、portrait、movement、editorial crop 的明确分工
+- Risk control：不要每格都正对镜头站立
 
-- 场景：product / fashion 混合
-- 格数：6
-- 核心锚点：洁净画廊光、贵金属反射、切面高光、极简奢华
-- 适用任务：珠宝、腕表、小型高端配饰
-- Transfer：hero、macro、portrait/lifestyle、closing frame 组成最清晰
-- Repair logic：如果微距信息过饱和，拉回更纯净背景并保留单一高光逻辑
-- Risk control：不要让珠宝 detail 脱离整套空间语法
+## 案例 4：耳机新品 9 格产品 campaign
+
+- 症状：产品镜头很多，但缺场景关系
+- Transfer：保留金属拉丝、深色背景、定向硬光
+- Repair logic：增加佩戴场景和桌面环境说明格
+- Risk control：不要让人物抢过产品，不要丢失按钮与接口细节
+
+## 案例 5：商场中庭 16 格空间提案
+
+- 症状：角落很美，但甲方看不懂整体路线
+- Transfer：保留主装置主题色和夜景灯光策略
+- Repair logic：拆出入口、动线节点、拍照点、封面位
+- Risk control：不要只拍局部，不要让尺度关系失真
+
+## 常见坑
+
+- 直接复制案例主体，不替换成当前项目对象
+- 只迁移风格，不迁移镜头职责
+- 修正时一次改太多，导致 anchor 丢失
+
+## 原始来源
+
+- 路线要求：`J:\005-Auto-Ad-Director-Skill-发布归档\00-总览索引\NEXT-SKILL-ROADMAP.md`

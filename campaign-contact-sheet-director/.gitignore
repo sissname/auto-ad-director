@@ -1,6 +1,2 @@
-.DS_Store
-Thumbs.db
-desktop.ini
-*.tmp
-*.log
 __pycache__/
+*.pyc

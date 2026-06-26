@@ -9,8 +9,7 @@ REQUIRED_FILES = [
     "agents/openai.yaml",
     "references/contact-sheet-framework.md",
     "references/shot-taxonomy.md",
-    "references/scenario-playbooks.md",
-    "references/platform-prompt-matrix.md",
+    "references/platform-prompt-formats.md",
     "references/examples.md",
     "references/benchmark-suite.md",
     "references/quality-scorecard.md",
@@ -18,31 +17,35 @@ REQUIRED_FILES = [
     "scripts/smoke_tests.py",
 ]
 
+
 SKILL_MARKERS = [
-    "Contact Sheet Blueprint",
-    "Per-frame Prompt Package",
-    "Adapt Existing Direction",
-    "Review and Repair",
-    "v1 专业质量门",
+    "### 专业提案版输出",
+    "## 案例复盘",
+    "## v1 专业质量门",
 ]
+
 
 SCORECARD_MARKERS = [
-    "锚点统一度",
-    "镜头覆盖度",
-    "逐格逻辑清晰度",
-    "平台提示可执行度",
-    "版式与裁切可用性",
+    "### Anchor 一致性",
+    "### Narrative 覆盖度",
+    "### Shot 多样性",
+    "### 平台可执行性",
+    "### 裁切与版面可用性",
+    "### 商业清晰度",
+    "### 生产可信度",
 ]
+
 
 CASE_MARKERS = [
-    "案例 1：高端汽车发布主视觉套图",
-    "案例 2：高端护肤 launch board",
-    "案例 3：时尚鞋履夜跑 campaign",
-    "案例 4：香氛快闪中庭提案",
-    "案例 5：珠宝 gallery light campaign",
+    "## 案例 1：雨夜汽车 9 格广告板",
+    "## 案例 2：护肤精华 6 格产品发布",
+    "## 案例 3：秋冬 lookbook 12 格时尚系列",
+    "## 案例 4：耳机新品 9 格产品 campaign",
+    "## 案例 5：商场中庭 16 格空间提案",
 ]
 
-BENCHMARK_MARKERS = [f"验收基准 {index}" for index in range(1, 11)]
+
+BENCHMARK_MARKERS = [f"## 验收基准 {index}" for index in range(1, 11)]
 
 
 def read(rel_path: str) -> str:
@@ -81,7 +84,9 @@ def main() -> int:
     case_text = read("references/case-library.md")
     for required in ["Transfer：", "Repair logic：", "Risk control："]:
         if case_text.count(required) < 5:
-            failures.append(f"references/case-library.md: expected at least 5 {required!r} sections")
+            failures.append(
+                f"references/case-library.md: expected at least 5 {required!r} sections"
+            )
 
     if failures:
         print("v1 readiness failed:")

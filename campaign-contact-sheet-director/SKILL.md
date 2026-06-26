@@ -1,184 +1,178 @@
 ---
 name: campaign-contact-sheet-director
-description: 将品牌、广告、产品、时尚或空间 brief 转成 6/9/12/16 格 campaign contact sheet 的统一风格策划、镜头分配、逐格 shot logic 与多平台 prompts。Use when the user needs a coherent multi-frame campaign board, launch visual system, shot list, proposal deck image plan, or cross-platform prompt package where every frame must share a style anchor while still having a distinct frame purpose.
+description: 为广告系列生成统一风格的 6/9/12/16 格 contact sheet，建立 style anchor，按广告、产品、时尚、空间场景拆出 shot taxonomy、逐格 shot logic 和平台 prompts。Use when the user asks for a multi-frame campaign, pitch-deck contact sheet, launch visual sequence, lookbook grid, retail/spatial proposal board, or wants one brief expanded into a coherent series instead of random single images.
 ---
 
 # Campaign Contact Sheet Director
 
 ## 核心工作流
-
-把用户给出的 brief、方向词、参考图分析结论或既有 campaign 概念，重组为“统一锚点下的多格系列画面”而不是一串彼此无关的单图 prompt。
-1. 先判断任务模式：新建 6/9/12/16 格方案、已有方案扩格、只做 shot plan、只做平台 prompts、或做 review and repair。
-2. 必先读取 `references/contact-sheet-framework.md`，建立 style anchor：品牌气质、叙事阶段、镜头系统、光线系统、色温、材质处理、版式留白、裁切纪律。
-3. 必先读取 `references/shot-taxonomy.md`，决定每格属于 hero、detail、lifestyle、motion、environment、macro、portrait、social crop 中的哪一类，不允许所有格子都写成 hero 图。
-4. 根据需求场景读取 `references/scenario-playbooks.md`，在 advertising、product、fashion、spatial 四类里选择最接近的打法。
-5. 根据格数完成镜头配比，保证“封面图、信息补位图、节奏变化图、收口图”都存在。
-6. 每一格都写清楚 shot logic：画面目的、主体、镜头距离、镜头高度、构图、动作、背景、光线、与锚点的连续关系、失败风险。
-7. 需要落地生成时，再读取 `references/platform-prompt-matrix.md`，输出 master anchor prompt 和逐格平台 prompts。
-8. 如果用户要求专业提案级输出或二次修订，追加读取 `references/quality-scorecard.md` 与 `references/case-library.md` 做质量把关和案例复盘。
+把 brief、参考图描述、品牌方向、场地条件或单张英雄图需求，转成同一 campaign 世界观下的多格 contact sheet。
+1. 先识别任务模式：从零生成、基于已有 brief 扩格、已有 hero 图延展、只做结构策划、不写平台 prompt。
+2. 先写 style anchor 六件套：品牌承诺、情绪温度、主色/材质、光线逻辑、镜头气质、不可破坏约束。
+3. 再决定格数：6 格适合快提案，9 格适合标准 campaign，12 格适合渠道覆盖，16 格适合大提案或空间项目。
+4. 读取 `references/contact-sheet-framework.md`，用对应格数配方拆出 narrative spine，而不是平均分配画面。
+5. 读取 `references/shot-taxonomy.md`，为每一格指定明确 shot role，避免每格都像 hero 图。
+6. 读取 `references/platform-prompt-formats.md`，为每一格输出平台 prompt；默认给主平台版本，用户要求时再补全全部平台。
+7. 输出时必须包含：style anchor、grid plan、逐格 shot logic、platform prompts、negative risks、统一性检查。
+8. 如果用户只要结构，不要假装已经生成图片；如果用户只给文字，不要假装看过参考图。
 
 ## 任务接收清单
 
-先补齐以下信息；缺什么就基于现有信息合理假设并显式写出假设。
-
-- 任务目标：提案、投放、风格探索、拍摄前置、AI 生图出图、社媒连发、空间效果图。
-- 主场景：advertising、product、fashion、spatial。
-- 交付格数：6 / 9 / 12 / 16。
-- 主体对象：车、产品、模特、空间、装置、包装、多人或混合主体。
-- 统一锚点：品牌关键词、情绪、色彩、材质、时间段、地点、镜头语言。
-- 非复制约束：不能照搬的参考元素、logo/文字风险、版权敏感对象、禁用风格。
-- 平台范围：Midjourney、即梦、可灵、Nano Banana、Seedream、通用中文模型。
-- 输出深度：只要 shot list、要 prompt package、还是要 review and repair。
-
-## Frame Count Decision
-
-优先按叙事密度而不是“越多越好”来选格数。
-
-- `6 格`：适合单一主线 campaign，强调 1 个 hero + 2 个支撑镜头 + 2 个变化镜头 + 1 个收口镜头。
-- `9 格`：适合标准提案页或内容矩阵，能同时兼顾英雄图、细节、人物/动作、环境和社媒裁切。
-- `12 格`：适合中等复杂项目，能够覆盖横版/竖版需求、两轮节奏变化和更完整的叙事弧线。
-- `16 格`：适合大型 campaign system、品牌发布、完整空间提案或多平台联动，需要显式分成 4 个小章节。
-
-如果用户没指定格数：
-
-- 需求偏提案或需要“看起来像一套完整 campaign”时，默认 `9 格`。
-- 需求偏高端发布、品类丰富、要兼顾横竖版时，默认 `12 格`。
-- 只想快速看方向是否成立时，默认 `6 格`。
-- 需要覆盖多个子场景、多个裁切和多个触点时，默认 `16 格`。
+- 输入 brief 是否说清楚：卖什么、卖给谁、在什么场景说服对方。
+- 是否已有固定主体：产品、人物、空间、装置、包装、服装系列。
+- 是否已有 style anchor：品牌气质、关键词、禁区、参考方向、季节或地域信息。
+- 是否明确输出格数：6 / 9 / 12 / 16。
+- 是否明确场景类型：广告、产品、时尚、空间。
+- 是否需要平台 prompt：Midjourney、即梦、通用中文模型，或只做 shot plan。
+- 是否需要社媒裁切、安全留白、标题区、logo 区、横竖版兼容。
+- 如果信息不全，先补最影响统一性的部分：主体、情绪、光线、场景。
 
 ## Reference Routing
 
-- 每次都先读 `references/contact-sheet-framework.md`。
-- 每次都先读 `references/shot-taxonomy.md`。
-- 涉及 advertising、product、fashion、spatial 任一场景时，读 `references/scenario-playbooks.md` 对应小节。
-- 需要真正输出平台 prompts 时，读 `references/platform-prompt-matrix.md`。
-- 用户要看格式示例、中文模板或示范任务时，读 `references/examples.md`。
-- 做自测、验收或回归时，读 `references/benchmark-suite.md`。
-- 用户要求“专业一点”“提案可交付”“帮我挑哪里还不够成熟”时，读 `references/quality-scorecard.md`。
-- 用户的 brief 与既有成熟 pattern 接近，或你想减少重新发明结构的风险时，读 `references/case-library.md`。
+- 只要开始做 contact sheet，先读 `references/contact-sheet-framework.md`。
+- 需要给每一格安排 shot role、避免重复镜头时，读 `references/shot-taxonomy.md`。
+- 需要落成可复制的平台 prompts 时，读 `references/platform-prompt-formats.md`。
+- 用户要看完整示例、参考输出口径或不同场景写法时，读 `references/examples.md`。
+- 用户要做专业评审、给客户讲为什么这组图成立时，读 `references/quality-scorecard.md`。
+- 当前 brief 与历史难题高度相似，或你需要更稳的修正路径时，读 `references/case-library.md`。
+- 做自测、比较版本成熟度或检查是否达标时，读 `references/benchmark-suite.md`。
 
 ## 输出模式
 
-### Contact Sheet Blueprint
-
-当用户要“先把这一套镜头搭出来”时，返回：
+### 标准交付
 
 ```text
-项目定义：
+Contact Sheet Brief：
 - 场景类型：
 - 格数：
+- 主平台：
 - 目标用途：
-- 核心主体：
-- 已知约束：
-- 关键假设：
 
-统一 Style Anchor：
-- 品牌/情绪：
-- 光线系统：
-- 镜头系统：
-- 色彩与材质：
-- 构图纪律：
-- 后期与质感：
-- 不能复制：
+Style Anchor：
+- 品牌承诺：
+- 情绪温度：
+- 主色 / 材质：
+- 光线逻辑：
+- 镜头气质：
+- 不可破坏约束：
 
-格子规划：
-1. Frame 01 | [shot type] | 这格负责什么
-2. Frame 02 | [shot type] | 这格负责什么
-...
+Grid Plan：
+- Frame 01：
+- Frame 02：
+- Frame 03：
+- ...
 
-连续性规则：
-- 必须重复出现的锚点：
-- 可以变化的变量：
-- 节奏推进方式：
-- 裁切与版式留白：
-```
+逐格 Shot Logic：
+- Frame 01
+  Role：
+  为什么在这一格：
+  主体与动作：
+  镜头与构图：
+  光线与材质：
+  连续性钩子：
+  平台 Prompt：
 
-### Per-frame Prompt Package
-
-当用户要完整多平台 prompts 时，返回：
-
-```text
-Master Anchor Prompt：
-[用于整套画面统一风格的总锚点]
-
-Per-frame Prompt Package：
-Frame 01
-- Shot type：
-- Shot logic：
-- Continuity link：
-- Midjourney：
-- 即梦：
-- 可灵：
-- Nano Banana：
-- Seedream：
-- 通用中文模型：
+统一性检查：
+- 必须重复出现的 anchor：
+- 可变化的变量：
 - Negative risks：
-
-Frame 02
-...
-
-Assembly Notes：
-- 哪几格必须最先出图验证：
-- 哪几格容易跑偏：
-- 如果整套不统一，先锁哪个变量：
 ```
 
-### Adapt Existing Direction
-
-当用户已有部分镜头或已有一张 hero 图，要求“扩成一套 contact sheet”时，返回：
+### 只做结构策划
 
 ```text
-现有锚点复述：
-- 已经成立的部分：
-- 需要补足的空位：
+Campaign Spine：
+- 这组图在卖什么：
+- 这组图的观看顺序：
+- 哪几格负责吸引：
+- 哪几格负责解释：
+- 哪几格负责转化或裁切：
 
-扩格策略：
-- 保持不变：
-- 新增镜头类型：
-- 新增节奏段落：
-- 需要避免的重复：
+建议格数：
+- 推荐：
+- 为什么不是更少：
+- 为什么不是更多：
 
-扩格清单：
-Frame 01 ...
-Frame 02 ...
+Shot Map：
+- Frame 01：
+- Frame 02：
+- ...
 ```
 
-### Review and Repair
-
-当用户已经拿到一套 contact sheet，但怀疑“像拼贴而不是一套 campaign”时，返回：
+### 从已有 Hero 图扩格
 
 ```text
-Review and Repair：
-- 当前阶段：
-- 最强锚点：
-- 断裂点：
-- 过度重复的镜头：
-- 缺失的镜头功能：
-- 优先修复顺序：
+已有 Hero 图保留项：
+- 必须保留的风格信号：
+- 必须保留的光线逻辑：
+- 必须保留的材质或颜色：
 
-Repair actions：
-1. 先统一什么
-2. 再替换哪几格
-3. 哪几格保留
-4. 哪几格需要重写 prompt
+扩格原则：
+- 新增镜头负责补什么：
+- 哪些镜头只做信息补充：
+- 哪些镜头承担社媒或裁切任务：
+
+新增 Frame 列表：
+- Frame 02：
+- Frame 03：
+- ...
 ```
 
-## 默认约束
+### 专业提案版输出
 
-- 不要把 6/9/12/16 格当成“同一张 prompt 的不同裁切”；每格都必须有独立角色。
-- 不要让所有格子都使用同一个镜头高度和同一个构图比例。
-- 不要只会写气氛词；每格至少落到主体关系、镜头、光线或动作之一。
-- 涉及文字、包装、屏幕界面、海报标题时，优先给留白和后期补字方案，不承诺模型稳定出字。
-- 当用户只给抽象方向时，先帮他把 anchor 拆清楚，再写 frame prompts。
-- 当用户给了参考图分析但没有原图时，可以继续工作，但必须标记“基于参考结论重建，而非直接识图”。
+```text
+提案摘要：
+- 这组图的核心承诺：
+- 推荐格数与理由：
+- 推荐主平台：
+
+Style Anchor Audit：
+- 必须锁定的锚点：
+- 可以变化的变量：
+- 最容易跑偏的点：
+
+Frame Matrix：
+- Frame 01：Role / 价值 / Prompt
+- Frame 02：Role / 价值 / Prompt
+- ...
+
+客户要听懂的结论：
+- 为什么这些格子不是随机拼图：
+- 哪几格负责吸引：
+- 哪几格负责证明：
+- 哪几格负责传播：
+
+执行提醒：
+- 先出哪几格验证方向：
+- 哪几格最值得做 A/B：
+- 哪些内容建议后期补字：
+```
+
+## 案例复盘
+
+当 brief 与已知场景高度接近，先去 `references/case-library.md` 找最近案例，再决定：
+- 哪些 anchor 可以直接迁移
+- 哪些镜头结构可以复用
+- 哪些风险要提前规避
+- 哪些平台提示需要收紧
+
+不要把案例文本整段复述给用户；只提炼“可迁移逻辑”和“当前项目要改的部分”。
 
 ## v1 专业质量门
 
-- 整套输出必须先有 `Master Anchor Prompt`，再有逐格 prompt；不能只有 9 条散 prompt。
-- 至少覆盖 4 种 shot type；否则画面会像重复试拍而不是 campaign。
-- 每一格都必须说明自己为何存在，不能只写“另一个角度的 hero 图”。
-- 必须显式说明整套中哪些变量固定、哪些变量允许变化。
-- 平台 prompts 必须体现各平台差异，而不是单纯翻译。
-- 遇到 advertising、product、fashion、spatial 时，必须体现对应场景的物理和商业逻辑。
-- 如果做 review and repair，必须指出“保留项 / 替换项 / 重写项”三类动作。
-- 结束前自查：这套输出是否真的能被别人拿去按格出图、排版和提案；如果不能，先补全再输出。
+- 不能只有“好看”的形容词，必须给出逐格 role。
+- 不能只有 hero 图，必须有证明材质、说明关系、承担裁切的格子。
+- 不能只说统一，要明确哪些 anchor 固定、哪些变量变化。
+- 不能只给 prompt，不解释为什么这样分格。
+- 不能忽略平台差异；至少说明主平台和一个备用平台。
+- 不能忽略社媒、标题区、横竖版中的至少一种交付限制。
+- 如果用户明确要提案级输出，结尾必须给“先做哪几格验证方向”和“最容易翻车的风险”。
+
+## 默认策略
+
+- 用户没指定格数时：标准 campaign 默认 9 格，产品发布默认 6 或 9 格，时尚 lookbook 默认 12 格，空间提案默认 16 格。
+- 用户没指定平台时：先输出通用中文版本，再补 Midjourney 简版。
+- 不要把每一格都写成高饱和 hero 图；至少要有建立世界、解释材质、推进动作、交代环境、预留裁切的分工。
+- 如果用户要求“统一但不要重复”，优先固定光线、材质、色温、镜头家族，再变化景别、动作、视角和构图密度。
+- 对广告和产品场景，优先保证主体可辨识；对时尚场景，优先保证姿态、造型关系和版面节奏；对空间场景，优先保证动线、入口、节点和拍照点关系。
+- 遇到文字、logo、UI、包装小字，优先建议留空位后期补字，不承诺模型稳定生成精确文案。

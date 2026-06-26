@@ -1,126 +1,133 @@
 # Contact Sheet Framework
 
-这份文档定义怎样把单张好图的思维，升级成“整套 campaign 画面”的思维。
+## 适合谁
 
-## 1. Contact Sheet 的最小结构
+- 需要把单个 brief 扩成一组广告画面的提示词导演
+- 需要给客户、内部团队或设计师快速出多格提案的人
+- 已有 hero 图，但还缺系列镜头逻辑的人
 
-一个合格的 contact sheet 不是“多张都好看”，而是同时满足以下四件事：
+## 解决什么问题
 
-- 有封面：一眼就知道这是哪类品牌、哪类情绪、哪类主体。
-- 有信息补位：把材质、结构、使用方式、人物关系或空间关系补齐。
-- 有节奏变化：远近、动静、横竖、留白密度、主体占比不能完全一致。
-- 有收口：最后几格要么做社媒裁切，要么做提案收尾，要么做关键 feature 聚焦。
+- 让 6 / 9 / 12 / 16 格画面像同一 campaign，而不是随机拼图
+- 在格数固定时，知道每一格应该承担什么叙事任务
+- 在广告、产品、时尚、空间四种场景下，快速建立统一 style anchor
 
-## 2. 统一 Style Anchor 的 8 个锚点
+## Style Anchor 六件套
 
-每套图先锁锚点，再写逐格。
+每次开始前先写这六项，后面每一格都要回钩到这里：
+1. 品牌承诺：这组图最终要让人相信什么。
+2. 情绪温度：冷静、明亮、张力、亲密、未来感、节庆感等。
+3. 主色与材质：颜色家族、反射强度、表面语言、织物或空间材料。
+4. 光线逻辑：自然光、硬光、逆光、夜景霓虹、展陈打光、柔雾等。
+5. 镜头气质：大广角纪实、85mm 肖像、俯视 still life、运动跟拍等。
+6. 不可破坏约束：不能跑偏的元素，例如“必须是晨雾银蓝，不可做黑金奢华”。
 
-1. `品牌气质`：克制、奢华、理性、街头、未来、温暖、极简、实验。
-2. `叙事阶段`：发布、亮相、体验、细节拆解、情绪氛围、空间导览。
-3. `镜头系统`：低机位广角、长焦压缩、中焦观察、俯视 still life、近距 macro。
-4. `光线系统`：硬边轮廓光、体积光、柔光扩散、逆光剪影、展厅实景光。
-5. `色温系统`：冷蓝夜景、暖金日落、灰白影棚、乳白扩散、鲜艳高对比。
-6. `材质处理`：金属反射、玻璃折射、皮革颗粒、织物蓬松、水感半透明、石材微纹理。
-7. `构图纪律`：对称、偏轴、负空间、强前景、边缘切割、留白区。
-8. `版式纪律`：标题区、logo 区、缩略图区、竖版适配、安全裁切区。
+## 格数配方
 
-## 3. 6 / 9 / 12 / 16 格默认配比
+### 6 格
 
-## 6 格模板
+适合：快提案、首轮方向确认、小型产品发布。
 
-- 1 格 hero
-- 1 格 supporting hero 或 second hero
-- 1 格 detail
-- 1 格 motion 或 lifestyle
-- 1 格 environment
-- 1 格 social crop / closing frame
+- Frame 01：Hero opener，第一眼建立气质
+- Frame 02：Detail proof，证明材质或功能
+- Frame 03：Lifestyle / human relation，建立使用关系
+- Frame 04：Motion / transformation，增加动态与能量
+- Frame 05：Environment / context，交代世界观
+- Frame 06：Social crop / closing，承担裁切、标题区或收束
 
-适合：快速定方向、提案第一页、单产品短 campaign。
+### 9 格
 
-## 9 格模板
+适合：标准广告 campaign、多渠道首版。
 
-- 2 格 hero 系
-- 2 格 detail / macro 系
-- 2 格 lifestyle / portrait / motion 系
-- 2 格 environment / context 系
-- 1 格 social crop / tagline safe frame
+- Row 1：吸引注意力
+  - Frame 01：主 hero
+  - Frame 02：侧向 hero 或关键 detail
+  - Frame 03：情绪补充或 secondary hook
+- Row 2：解释品牌与产品
+  - Frame 04：人和主体关系
+  - Frame 05：功能 / 材质 / 节点
+  - Frame 06：空间或环境支持
+- Row 3：转化与延展
+  - Frame 07：动态或变化
+  - Frame 08：社媒裁切或标题位
+  - Frame 09：closing / mnemonic frame
 
-适合：标准 campaign board、投放前期、客户提案。
+### 12 格
 
-## 12 格模板
+适合：时尚 lookbook、产品矩阵、跨渠道素材包。
 
-- 3 格 hero 与 second hero
-- 3 格 detail 与 material reveal
-- 2 格 lifestyle / portrait
-- 2 格 environment / spatial context
-- 1 格 motion
-- 1 格 social crop / packshot closing
+- Block A：3 格建立主视觉
+- Block B：3 格补主体细节与材料证据
+- Block C：3 格做人物 / 动作 / 使用关系
+- Block D：3 格做渠道适配：竖版、横版、社媒 crop
 
-适合：发布套图、多渠道内容矩阵、横竖版并行。
+### 16 格
 
-## 16 格模板
+适合：空间提案、大型品牌项目、完整提案墙。
 
-按四章组织最稳：
+- Zone 1：入口与第一印象
+- Zone 2：核心装置或主产品
+- Zone 3：路径与互动节点
+- Zone 4：细节、材料、局部 close-up
+- Zone 5：人物或使用关系
+- Zone 6：夜景 / 氛围补充
+- Zone 7：社媒拍照点与传播位
+- Zone 8：收束与提案封面备选
 
-- Chapter A：Brand entrance
-- Chapter B：Product / subject reveal
-- Chapter C：Usage / emotion / interaction
-- Chapter D：Closure / crop / platform delivery
+## 场景适配器
 
-每章 4 格，避免 16 格全部平均摊开导致失焦。
+### 广告场景
 
-## 4. Per-frame Shot Logic 的固定写法
+- 优先级：品牌承诺 > hero 气质 > 转化镜头
+- 常见错误：每格都太像 KV，缺少辅助说明镜头
+- 必留镜头：hero、detail、use case、environment、social crop
 
-每一格都用同一套字段描述，便于出图和复盘。
+### 产品场景
 
-```text
-Frame [编号]
-- 角色：这一格负责什么
-- Shot type：hero / detail / lifestyle / motion / environment / macro / portrait / social crop
-- 主体关系：谁是主角，谁是陪衬
-- 镜头与视角：景别、机位、镜头感觉
-- 构图：主次位置、留白、裁切
-- 光线：主光、辅光、边光、反射
-- 动作或状态：静止、冲刺、触碰、走入、注视、悬停
-- 连续性：与前后格共享什么锚点
-- 风险：最容易跑偏成什么
-```
+- 优先级：主体可辨识 > 材质可信度 > 使用关系
+- 常见错误：材质语言不统一，场景喧宾夺主
+- 必留镜头：hero still life、macro detail、功能关系、包装 / 周边、裁切版
 
-## 5. 连续性规则
+### 时尚场景
 
-整套输出至少锁住 3 个固定变量：
+- 优先级：造型语言 > 人物姿态 > 版面节奏
+- 常见错误：每格姿态同质化，人物表情与服装气质冲突
+- 必留镜头：full look、half body、portrait、movement、texture、editorial crop
 
-- 一个视觉氛围变量：例如冷夜雨面、奶白柔雾、午后暖金。
-- 一个镜头变量：例如低机位广角、50mm 观察式、俯视 still life。
-- 一个材质变量：例如湿地反射、玻璃与金属、织物与皮肤、石材与灯带。
+### 空间场景
 
-允许变化的变量通常是：
+- 优先级：入口识别 > 动线逻辑 > 节点与拍照点
+- 常见错误：只会做漂亮角落，不能说明路线与尺度
+- 必留镜头：入口、全景、关键装置、中途节点、材质 detail、拍照点、夜景
 
-- 主体距离
-- 动作强度
-- 留白比例
-- 横竖构图
-- 背景复杂度
+## 逐格 Shot Logic 模板
 
-## 6. 什么时候这套图会像拼贴
+每一格至少写清楚：
+- Role：这格负责什么，不要只写“好看”
+- Why now：为什么排在这里
+- Subject：主体、人物、装置或产品
+- Action：静止、行走、拿起、靠近、穿过、旋转、展开
+- Camera：景别、机位、焦段倾向
+- Light：主光源、色温、反射、阴影强度
+- Environment：背景、空间层次、道具关系
+- Continuity hook：与前后格共享的锚点
+- Deliverable note：是否承担竖版、横版、标题区或社媒裁切
 
-出现以下情况时，整套大概率会散：
+## 一致性约束
 
-- 每格都像不同摄影师拍的。
-- 一部分格子是强影棚，一部分格子是强纪实，但没有过渡逻辑。
-- hero 很高级，detail 却像电商白底。
-- 空间和产品的透视系统互相打架。
-- 人物的造型语言与产品/空间的材质语言不在一个世界里。
+- 固定三项以上 anchor：色温、材质家族、镜头家族、时间段、人物气质至少固定三项
+- 连续变化不超过两项：每一格最多重点变化两项，例如“视角 + 动作”
+- Hero 不超过总格数三分之一：否则会失去节奏
+- 至少一格承担裁切任务：否则交付不可用
+- 至少一格承担环境说明：否则世界观不成立
 
-## 7. Assembly Checklist
+## 常见坑
 
-最终交付前逐项检查：
+- 只会堆砌形容词，不给逐格分工
+- 只写“detail”却没说明要证明什么细节
+- 只想要统一，结果每格都长得一样
+- 只顾风格，不顾版面留白和裁切位
 
-- 是否明确标出 `Master Anchor Prompt`
-- 是否写明格数与使用场景
-- 是否至少覆盖 4 种 shot type
-- 是否每格都有存在理由
-- 是否写明固定变量与变化变量
-- 是否有 social crop 或 closing frame
-- 是否有文字/版式安全区说明
-- 是否指出最先验证的关键帧
+## 原始来源
+
+- 路线要求：`J:\005-Auto-Ad-Director-Skill-发布归档\00-总览索引\NEXT-SKILL-ROADMAP.md`

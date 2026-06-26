@@ -1,24 +1,21 @@
 # Campaign Contact Sheet Director
 
-`campaign-contact-sheet-director` 是一个面向广告提案、品牌发布、产品 launch、时尚 campaign 和空间效果图规划的 Codex skill。
-
-它的核心目标不是“多写几条 prompt”，而是把一个 brief 组织成 **6 / 9 / 12 / 16 格统一风格的 contact sheet**：先建立整套的 style anchor，再拆出逐格镜头角色、逐格 shot logic，以及面向不同平台的 prompt 包。
+Campaign Contact Sheet Director 是一个面向广告提案、多格视觉规划和平台出图交付的 Codex skill。它的目标不是只写几条好看的 prompt，而是把一个 brief 拆成统一风格的 6 / 9 / 12 / 16 格 contact sheet，并且给出逐格 shot logic、平台 prompts、质量检查和提案口径。
 
 ## 适合谁
 
-- 需要把单张好图扩成整套 campaign 的团队
-- 需要给客户、设计团队、运营或提案会展示多格分镜方案的人
-- 想让 AI 生图从“散图试错”升级到“成套系统输出”的使用者
-- 需要 advertising、product、fashion、spatial 四类场景统一方法论的人
+- 需要把单条 brief 扩成整组 campaign 画面的人
+- 需要做广告提案、产品发布板、时尚 lookbook、空间提案板的人
+- 已有 hero 图，但还缺系列延展和逐格逻辑的人
 
-## 能解决什么问题
+## 解决什么问题
 
-- 把 brief 转成 6 / 9 / 12 / 16 格 contact sheet 结构
-- 建立统一的 style anchor：品牌气质、镜头系统、光线系统、色彩、材质、裁切纪律
-- 用 shot taxonomy 分配每格职责：hero、detail、lifestyle、motion、environment、macro、portrait、social crop
-- 输出逐格 shot logic，而不是只给一串抽象气氛词
-- 为 Midjourney、即梦、可灵、Nano Banana、Seedream、通用中文模型生成逐格平台 prompts
-- 对现有 contact sheet 做 review and repair，指出保留项、替换项和重写项
+- 同一组图看起来像同一 campaign，而不是随机拼图
+- 能同时支持广告、产品、时尚、空间四种场景
+- 支持 6 / 9 / 12 / 16 格 contact sheet 规划
+- 给出统一的 style anchor、shot taxonomy、逐格 shot logic
+- 输出 Midjourney、即梦、通用中文模型三类平台 prompts
+- 自带 examples、benchmark suite、smoke tests 和 v1 readiness 校验
 
 ## 目录结构
 
@@ -32,53 +29,58 @@ campaign-contact-sheet-director/
 │  ├─ case-library.md
 │  ├─ contact-sheet-framework.md
 │  ├─ examples.md
-│  ├─ platform-prompt-matrix.md
+│  ├─ platform-prompt-formats.md
 │  ├─ quality-scorecard.md
-│  ├─ scenario-playbooks.md
 │  └─ shot-taxonomy.md
-└─ scripts/
-   ├─ smoke_tests.py
-   └─ validate_v1_readiness.py
+├─ scripts/
+│  ├─ smoke_tests.py
+│  └─ validate_v1_readiness.py
+├─ LICENSE
+└─ README.md
 ```
 
-## 安装
+## 操作步骤
 
-复制到 Codex skills 目录：
+### 1. 安装到 Codex skills 目录
 
 ```powershell
-Copy-Item -Recurse -Force . "$env:USERPROFILE\\.codex\\skills\\campaign-contact-sheet-director"
+Copy-Item -Recurse -Force . "$env:USERPROFILE\.codex\skills\campaign-contact-sheet-director"
 ```
 
-然后在 Codex 中调用：
+### 2. 在 Codex 里直接调用
+
+英文示例：
 
 ```text
-Use $campaign-contact-sheet-director to turn this campaign brief into a unified 9-frame contact sheet with per-frame shot logic and platform prompts.
+Use $campaign-contact-sheet-director to turn this launch brief into a unified 9-frame campaign contact sheet with per-frame shot logic and Midjourney prompts.
 ```
 
-中文也可以直接用：
+中文示例：
 
 ```text
-用 campaign-contact-sheet-director 把这个 brief 拆成一套统一风格的 12 格 contact sheet，并给我逐格平台提示词。
+用 campaign-contact-sheet-director 帮我把这个护肤新品 brief 拆成 6 格产品发布板，保留统一 style anchor，并给每一格的即梦 prompt。
 ```
 
-## v1 关键能力
+### 3. 需要更专业的输出时
 
-- 支持 `6 / 9 / 12 / 16` 四种常用格数
-- 支持 `advertising / product / fashion / spatial` 四类场景
-- 强制先写 `Master Anchor Prompt` 再写逐格 prompts
-- 每格都要求说明存在理由、连续性关系和失败风险
-- 提供 `benchmark suite`、`quality scorecard`、`case library`
-- 提供 `smoke tests` 和 `v1 readiness validation`
+可以直接要求：
 
-## 交付原则
+- 给我提案级输出，不要只给 prompt
+- 先只做结构策划，不写平台 prompt
+- 基于这张 hero 图补出 12 格时尚系列
+- 同时给 Midjourney 和即梦版本，并指出最容易翻车的格子
 
-- 先做整套锚点，再写单格 prompt
-- 至少覆盖 4 种 shot type，避免整套画面过度重复
-- 平台输出必须保留统一锚点，同时体现平台差异
-- 涉及文字、包装或 logo 时，优先留出安全区和后期补字方案
-- review and repair 必须说明保留项、替换项、重写项
+## 常见坑
+
+- 每一格都写成 hero 图，缺少 detail、environment 和 social crop
+- 只想统一，不写哪些 anchor 必须固定
+- 有平台 prompt，但没有逐格职责
+- 忘记预留标题区、社媒裁切位或竖版传播位
+- 文字、logo、包装小字直接让模型硬生，导致交付不可用
 
 ## 本地验证
+
+先建议在测试项目里跑，确认结构和脚本都正常，再用于正式归档或发布。
 
 ```powershell
 $env:PYTHONUTF8='1'
@@ -87,9 +89,14 @@ python C:\Users\windows\.codex\skills\campaign-contact-sheet-director\scripts\sm
 python C:\Users\windows\.codex\skills\campaign-contact-sheet-director\scripts\validate_v1_readiness.py
 ```
 
+## 原始来源
+
+- 技能路线图：`J:\005-Auto-Ad-Director-Skill-发布归档\00-总览索引\NEXT-SKILL-ROADMAP.md`
+- 当前归档说明：`J:\005-Auto-Ad-Director-Skill-发布归档\00-总览索引\README.md`
+
 ## English Summary
 
-This skill turns a visual brief into a coherent multi-frame campaign contact sheet rather than a loose list of prompts. It builds a unified style anchor, assigns frame roles, writes per-frame shot logic, and adapts the output for multiple image-generation platforms.
+This skill helps Codex turn one visual brief into a coherent 6/9/12/16-frame campaign contact sheet with unified style anchors, shot taxonomy, per-frame shot logic, platform-specific prompts, examples, benchmark cases, and professional readiness validation.
 
 ## License
 
