@@ -1,4 +1,4 @@
-# Benchmark Suite
+# 基准测试套件（Benchmark Suite）
 
 用于验证该 skill 是否能帮助用户选择品牌方向，而不是直接承诺最终 logo。
 
