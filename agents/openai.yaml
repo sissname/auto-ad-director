@@ -1,4 +1,4 @@
 interface:
-  display_name: "Auto Ad Director"
-  short_description: "汽车广告视觉导演：生成、诊断和迭代汽车广告提示词。"
-  default_prompt: "Use $auto-ad-director to create or improve a cinematic automotive campaign prompt package from this brief."
+  display_name: "品牌方向稿视觉导演"
+  short_description: "生成 3-5 个品牌方向稿与创意评审。"
+  default_prompt: "使用 $brand-concept-visual-director 把这份品牌定位、参考图和限制条件转成 3-5 个视觉方向 prompt，并附创意总监评审。"
