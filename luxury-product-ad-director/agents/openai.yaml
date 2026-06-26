@@ -1,0 +1,4 @@
+interface:
+  display_name: "Luxury Product Ad Director"
+  short_description: "为香水、腕表、珠宝、包袋生成高端产品广告提示词与镜头包。"
+  default_prompt: "Use $luxury-product-ad-director to build a luxury product campaign prompt package for perfume, watch, jewelry, or bag imagery."
