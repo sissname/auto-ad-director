@@ -1,219 +1,180 @@
 ---
 name: brand-visual-research-builder
-description: 基于品牌官方页面、新闻稿、媒体中心、产品页和用户提供链接，构建可追溯的品牌视觉研究库，并把观察结论翻译成镜头、光线、材质、颜色、场景、人物语气与 failure risks。Use when Codex needs source-backed brand visual research, official-page reading, compact research bank creation, brand-inspired prompt direction, campaign visual territory mapping, or compliance-aware prompt translation without保存原图、without claiming official authorization。中文适用：品牌视觉研究、官方页面拆解、来源留档、品牌气质转 prompt 规则、只做研究不出图、研究库压缩交付。
+description: Build compact brand visual research banks from official pages, press or newsroom pages, media-center pages, product pages, and other official brand surfaces. Use when Codex needs to整理官网视觉研究、保留原始来源链接、提炼视觉观察、沉淀 Prompt Translation Rules、列出 Failure Risks、做品牌调性对比、把研究转成可执行提示词方向，并且明确不保存原图、不宣称官方授权、不把研究结论写成官方品牌规范。
 ---
 
 # Brand Visual Research Builder
 
 ## 核心工作流
 
-把用户给出的品牌名、产品线、品牌方向稿需求或官方链接，整理成“有来源、可复用、能落到 prompt”的品牌视觉研究库。
+把品牌官网信息整理成可复用的视觉研究库，而不是整理成“好看但不可执行”的灵感摘抄。
 
-1. 先判断研究范围：单品牌研究、单产品研究、品牌对标、品牌方向稿前置研究，还是只做研究不写 prompt。
-2. 优先读取官方来源：品牌官网首页、产品页、新闻稿、媒体中心、Lookbook、店铺/空间页面、品牌故事页。只在用户明确要求时再补第三方媒体。
-3. 用 `references/research-framework.md` 记录来源链接、页面类型、观察结论、可迁移的视觉变量和不应照抄的元素。
-4. 用 `references/source-intake-and-compliance.md` 约束边界：不下载原图、不保留官方素材副本、不声称官方授权、不把“品牌启发”写成“官方标准”。
-5. 用 `references/prompt-translation-rules.md` 把研究结果翻译成镜头、光线、构图、材质、色彩、场景、人物状态、版式留白和 negative risks。
-6. 需要快速交付时，直接输出 `compact research bank`；需要稳态交付时，再补品牌摘要、source log、prompt rules、avoid list。
-7. 用户明确要求“只做研究”时，不输出平台 prompt，只给研究结论与后续方向。
-8. 用户要求“官方一致”“严格品牌合规”时，明确说明仍需真实 brand guideline、授权素材或用户提供的官方包，不能用公开页面替代正式规范。
+1. 先确认研究目标：单品牌研究、多个品牌对比、某一产品线视觉拆解，还是给后续 prompt director 做前置研究。
+2. 只优先读取官方来源：官网首页、品牌故事页、新闻 / newsroom、媒体中心、产品页、店铺 / 空间页、投资者页面、发布会回放页。
+3. 为每个页面保留原始链接、页面类型、为什么读它、从中观察到的视觉证据。
+4. 把观察拆成可控变量：构图、景别、镜头高度、光线方向、色温、材质、表面处理、空间语气、人物状态、文字 / logo 策略。
+5. 明确区分“可转译的视觉规律”和“不能照抄的具体元素”，尤其是商标、版式、标语、包装文字、门店装置、受保护图案和人物肖像。
+6. 输出 `Compact Research Bank`，其中必须包含来源链接、观察结论、`Prompt Translation Rules`、`Failure Risks` 和安全措辞。
+7. 如果用户要继续出图，只把研究结果转成方向，不把研究库伪装成官方授权手册。
+8. 在专业交付前运行一次“专业质量门”，检查来源覆盖、证据纪律、可转译性和非官方措辞是否到位。
 
-## 任务接收清单
+## 来源优先级
 
-- 品牌名是否明确；如果只给集团名，优先锁定具体品牌或产品线。
-- 用户要的是研究库、方向稿前置、prompt 规则，还是只做风险排查。
-- 是否已经给了官方链接、品牌 PDF、发布页、媒体中心页或产品页。
-- 目标输出面向什么：海报、包装、广告主视觉、空间效果图、社媒图、产品 hero、提案摘要。
-- 是否需要多品牌对比，还是只做单品牌深挖。
-- 是否存在敏感项：logo、字体、包装文案、独特插画角色、摄影签名风格、店装结构。
+默认按下面顺序取证：
+
+1. 产品页：最能说明材质、结构、光线、色彩和近景细节。
+2. 新闻 / Newsroom：最能说明发布语气、品牌要强调的世界观和主叙事。
+3. 媒体中心 / Press / Image bank：最能说明官方愿意公开展示的角度、构图和视觉控制方式。
+4. 官网首页 / 品牌页：最能说明整体调性、页面留白、文字密度和视觉节奏。
+5. 官方空间 / 门店 / 展陈页：用于补足空间语言、道具密度、动线和材质氛围。
+
+如果某品牌没有公开 newsroom 或 media center，不要硬编；改为补读其官方 about、空间、产品分类页，并在输出里说明来源结构有限。
 
 ## Reference Routing
 
-- 每次做品牌视觉研究，都先读 `references/research-framework.md`。
-- 只要涉及来源留档、官方页面优先级、不可保存原图、授权边界，就读 `references/source-intake-and-compliance.md`。
-- 只要需要把观察结论翻译成 prompt 变量、镜头规则或避免项，就读 `references/prompt-translation-rules.md`。
-- 用户要示例输出、交付模板或“给我看一份长什么样”时，读 `references/examples.md`。
-- 用户要快速套用已有品牌样本，或需要从公开案例里找视觉抓手时，读 `references/compact-research-bank.md`。
-- 用户要把研究结果做成提案级、交付级或更稳的专业版本时，读 `references/professional-quality-gate.md`。
-- 用户的问题和已知案例接近，或者你想用成熟研究模式复用结构时，读 `references/case-library.md`。
-- 做本 skill 自测、回归检查或验收时，读 `references/benchmark-suite.md`。
+- 每次做品牌研究，先读 `references/research-workflow.md`。
+- 涉及来源可信度、页面类型取舍、链接保留方式时，读 `references/official-source-rules.md`。
+- 需要把研究转成 prompt 变量时，读 `references/prompt-translation-rules.md`。
+- 需要现成品牌样例、研究库格式或对照写法时，读 `references/compact-research-bank.md`。
+- 需要示例输出节奏时，读 `references/examples.md`。
+- 需要验证这个 skill 是否成熟时，读 `references/benchmark-suite.md`。
+- 做专业版交付、自查或验收时，读 `references/quality-scorecard.md` 和 `references/case-library.md`。
 
 ## 输出模式
 
-### Compact Research Bank
+### 单品牌研究卡
 
-默认输出：
+适合先把一个品牌研究明白，再决定是否进入 prompt 生成。
 
 ```text
-品牌研究库：
+研究任务：
 - 品牌 / 产品线：
-- 研究范围：
-- 证据等级：官方页面 / 官方新闻 / 官方媒体中心 / 用户提供材料 / 推断
-- 一句话视觉结论：
+- 研究目标：
+- 证据状态：直接读取官方页面 / 基于用户提供链接 / 基于描述推断
 
-来源记录：
-1. [链接] - 页面类型 - 为什么有用
-2. [链接] - 页面类型 - 为什么有用
+来源台账：
+- 页面类型：
+  链接：
+  读取理由：
+  视觉证据：
 
-观察结论：
-- 视觉领地：
-- 构图与镜头：
-- 光线与材质：
-- 颜色与环境：
+核心观察：
+- 品牌视觉领域：
+- 构图与景别：
+- 光线与色温：
+- 材质与表面：
+- 颜色纪律：
+- 空间 / 场景语气：
 - 人物 / 叙事气质：
 
-Prompt translation rules：
-- 保留：
-- 转译：
-- 可控变量：
-- 留白与文字策略：
-
-Failure risks：
-- 不能照抄的元素：
-- 容易做俗的方向：
-- 容易做偏的方向：
-```
-
-### 单品牌深挖
-
-当用户要“把这个品牌研究透，再给视觉规则”时，返回：
-
-```text
-品牌视觉研究：
-- 品牌 / 产品：
-- 研究目标：
-- 研究结论：
-
-Source log：
-- 官方首页：
-- 产品页：
-- 新闻 / Press：
-- 媒体 / Store / Story：
-
-Evidence-backed visual territory：
-- 1 句话定义：
-- 3 个最强证据：
-
-Prompt translation：
+Prompt Translation Rules：
 - 镜头：
-- 构图：
 - 光线：
 - 材质：
-- 色彩：
+- 颜色：
 - 场景：
-- 人物状态：
-- Negative risks：
+- 文案 / logo 处理：
+
+Failure Risks：
+- 容易跑偏成什么：
+- 不要照抄什么：
+- 生成时最脆弱的部位：
+
+安全措辞：
+- 推荐写法：
+- 避免写法：
 ```
 
-### 只做研究不写 Prompt
+### Compact Research Bank
 
-用户说“先别写 prompt，只做研究”时，返回：
+适合给后续 skill、团队成员或自己留一个紧凑研究库。
 
 ```text
-研究结论：
-- 核心视觉领地：
-- 关键证据：
-- 可迁移元素：
-- 不应照抄元素：
-- 视觉风险：
-- 如果下一步要出图，最适合先锁定的变量：
+Brand:
+Research angle:
+Source links:
+- [official page]
+- [newsroom / media / product]
+
+Observation summary:
+- [3-5 条核心视觉规律]
+
+Prompt Translation Rules:
+- Camera:
+- Light:
+- Material:
+- Color:
+- Space / talent:
+- Typography / logo policy:
+
+Failure Risks:
+- [3-5 条最容易翻车的问题]
+
+Safe wording:
+- “受该品牌公开页面启发的视觉方向”
+- “基于官方公开页面提炼的非官方研究结论”
 ```
 
-### 品牌对标
+### 多品牌对比
 
-用户要比较两个品牌时，返回：
+适合给提案、方向筛选或 prompt platform adapter 做前置判断。
 
 ```text
-品牌对标：
-- 品牌 A 视觉结论：
-- 品牌 B 视觉结论：
+对比结论：
+- 品牌 A：
+  核心视觉领域：
+  Prompt Translation Rules：
+  Failure Risks：
+- 品牌 B：
+  核心视觉领域：
+  Prompt Translation Rules：
+  Failure Risks：
 
-差异：
-- 构图：
+最关键差异：
 - 光线：
 - 材质：
 - 场景：
-- 人物状态：
-
-转译建议：
-- 更像 A 时该加什么：
-- 更像 B 时该加什么：
-- 两边都该避免什么：
+- 情绪：
+- 是否适合混用：
 ```
 
-### 专业研究包
+### 研究转 Prompt Brief
 
-用户要“给团队过会”“写进提案”“做成可复用研究条目”时，返回：
+只有在用户明确要继续生成时再给这一层。
 
 ```text
-专业研究包：
-- 品牌 / 产品：
-- 研究目标：
-- 证据等级：A / B / C / D
-- 一句话结论：
-
-Source log：
-1. URL - 页面类型 - 证据
-2. URL - 页面类型 - 证据
-
-Visual territory：
-- 构图与镜头：
-- 光线：
-- 材质：
-- 色彩：
-- 场景：
-- 人物 / 叙事：
-
-Prompt translation：
-- Preserve：
-- Translate：
-- Control variables：
-- Negative risks：
-
-结论：
-- 适合做什么：
-- 不适合做什么：
-- 还缺什么正式资料：
+研究转译 Brief：
+- Style anchor：
+- Camera：
+- Light：
+- Material：
+- Color：
+- Space：
+- Talent / object behavior：
+- Text / logo policy：
+- Negative constraints：
 ```
 
-### 案例复用
+## 质量规则
 
-用户要“参考一个类似品牌研究方式”时，先读 `references/case-library.md`，再返回：
+- 不保存原图，只保存链接、页面名称、观察结论和转译规则。
+- 不宣称“官方授权”“官方风格复刻”“官方品牌规范”；除非用户真的提供了授权文件。
+- 不把具体版式、标语、包装文字、门店图形系统当成可直接照抄的 prompt 内容。
+- 如果只读到了产品页，没有读到 newsroom / media，就明确写“来源覆盖偏产品侧”。
+- 如果用户只给了品牌名，没有给链接，也没有要求联网，优先写出需要补的官方页面类型。
+- 如果观察只能从文字页面推断，标记为“推断项”，不要假装看到了图像细节。
+- 把每一条观察都转成控制指令，避免停留在“高级、极简、未来感”这类空词上。
 
-```text
-案例匹配：
-- 最接近的案例：
-- 为什么像：
+## 专业质量门
 
-可直接复用：
-- 来源抓法：
-- 观察结构：
-- Prompt 转译结构：
+在输出 v1 级研究库前，逐项检查：
 
-针对本次任务的调整：
-- 要保留：
-- 要替换：
-- 要额外提醒的风险：
-```
+- 是否至少覆盖了 3 类官方来源。
+- 是否每个来源都保留了原始链接。
+- 是否把观察拆成可执行变量，而不是审美形容词。
+- 是否写明了 `Prompt Translation Rules` 和 `Failure Risks`。
+- 是否至少点出 1 条“不应照抄”的元素。
+- 是否使用了非官方、安全的归纳措辞。
+- 是否能直接被后续 prompt director 或提案文档接走。
 
-## v1 专业质量门
-
-- 至少给出 2 个可回查的官方来源链接；如果不足，明确写“证据不足”。
-- 研究结论必须能落到镜头、光线、材质、色彩、场景中的至少 5 项。
-- 至少指出 1 类“不能照抄的元素”和 2 类 failure risks。
-- 不能把公开页面观察写成“官方规范”或“授权风格”。
-- 只做研究模式下，不要偷偷补平台 prompt。
-- 如果用户要求严格品牌合规，必须提醒还需要正式 brand guideline 或授权素材。
-- 对标任务必须说明品牌差异，而不是把两个品牌都翻译成同一套“高级感”。
-- 结尾必须说明“适合做什么 / 不适合做什么 / 还缺什么资料”。
-
-如果以上任一项缺失，先自我修订一轮再输出。
-
-## 默认策略
-
-- 用户没给链接时，优先从公开可见的官方页面建立最小研究库，不要求先补齐所有材料。
-- 研究阶段默认只保存文字化结论与来源链接，不保存官方图片、副本或截图。
-- 不把公开页面观察写成“官方 brand guideline”；一律用“品牌启发”“官方页面可见视觉领地”“公开证据显示”这类措辞。
-- 遇到 logo、排版、插画角色、包装正面、品牌签名字体、店装平面这类高版权/高识别元素时，只总结原则，不要求模型复刻。
-- 如果官方页面信息不足，明确标注“证据不充分”，再补充保守推断，不要装作看到了不存在的内容。
-- 做提案级交付时，优先按 `专业研究包` 输出，而不是只给一段紧凑摘要。
+如果有任一项缺失，先补齐再交付。

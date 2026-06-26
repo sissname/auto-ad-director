@@ -1,4 +1,4 @@
 interface:
   display_name: "Brand Visual Research Builder"
-  short_description: "¹¹½¨»ùÓÚ¹Ù·½Ò³ÃæÓëÃ½Ìå×ÊÁÏµÄÆ·ÅÆÊÓ¾õÑĞ¾¿¿â£¬²¢·­ÒëÎª¿ÉÖ´ĞĞ prompt ¹æÔò¡£"
-  default_prompt: "Use $brand-visual-research-builder to research this brand from official pages, preserve source links, and turn the findings into prompt translation rules and failure risks."
+  short_description: "ä»å®˜ç½‘é¡µé¢æ•´ç†å“ç‰Œè§†è§‰è¯æ®ã€ç ”ç©¶ç»“è®ºä¸æç¤ºè¯è½¬æ¢è§„åˆ™ã€‚"
+  default_prompt: "ç”¨ $brand-visual-research-builder ä¸ºè¿™ä¸ªå“ç‰Œæ•´ç†å®˜ç½‘ç ”ç©¶åº“ï¼Œä¿ç•™æ¥æºé“¾æ¥ã€è§†è§‰è§‚å¯Ÿã€æç¤ºè¯è½¬æ¢è§„åˆ™å’Œå¤±è´¥é£é™©ã€‚"

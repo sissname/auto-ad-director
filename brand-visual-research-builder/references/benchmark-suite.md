@@ -1,195 +1,113 @@
 # Benchmark Suite
 
-用这些基准检查本 skill 是否真的能把官方页面研究转成可执行视觉规则，而不是只会写品牌摘要。
+用这 5 组验收基准检查 skill 是否真的能把官网研究做成可交付的研究库，而不是只会写空泛品牌形容词。
 
-## 验收基准 1：Apple 消费电子海报前置研究
+## 验收基准 1：Apple 单品牌研究库
 
-输入：
-
-```text
-Use $brand-visual-research-builder. 研究 Apple iPhone 的官方公开页面，给我一个 compact research bank，后面我要做消费电子海报方向。
-```
-
-期望输出：
-
-- 至少 3 个 Apple 官方链接
-- 一句话视觉结论
-- 能落到轮廓、材质、背景、留白、风险
-
-Fail if：
-
-- 没有链接
-- 只写“高级、简洁、科技感”
-- 没有 failure risks
-
-## 验收基准 2：Nike 鞋类主视觉规则
-
-输入：
+Input:
 
 ```text
-Use $brand-visual-research-builder. 研究 Nike Air Max Dn8 的公开页面，把结论翻成鞋类主视觉的镜头、光线、材质和避免项。
+用 $brand-visual-research-builder 帮我整理 Apple 官网产品视觉研究库。我要保留来源链接、观察结论、Prompt Translation Rules 和 Failure Risks，不要保存原图。
 ```
 
-期望输出：
+Expected output:
 
-- 来源含 Nike Newsroom 和产品页
-- 镜头规则明确
-- 风险里指出俗套速度特效和失真鞋底
+- 明确列出官方来源链接。
+- 能把观察拆成镜头、光线、材质、颜色和文案区策略。
+- 明确写出“不保存原图”和非官方措辞。
 
-Fail if：
+Fail if:
 
-- 只给品牌故事，不给可控变量
-- 不区分运动能量和奢侈品棚拍
+- 只写“极简、高级、科技感”。
+- 没有链接。
+- 把结论说成官方品牌规范。
 
-## 验收基准 3：Porsche 只做研究不出 Prompt
+## 验收基准 2：Nike 跑步品类研究转译
 
-输入：
+Input:
 
 ```text
-Use $brand-visual-research-builder. 先研究 Porsche 911 的官方页面，告诉我适合迁移的视觉领地和不能照抄的元素，不要写 prompt。
+用 $brand-visual-research-builder 研究 Nike 跑步品类页面，整理成一个后续可交给 prompt director 的官网研究卡。
 ```
 
-期望输出：
+Expected output:
 
-- 明确是研究模式
-- 有来源链接
-- 说出道路接触、曲线高光、黄昏张力等变量
-- 说出 badge、具体构图、 campaign 版式不能照抄
+- 来源至少覆盖 newsroom 与 running / product family 页面。
+- 能指出动势、地面关系、材质层次和场景选择。
+- `Prompt Translation Rules` 不是翻译标题，而是控制变量。
 
-Fail if：
+Fail if:
 
-- 仍然输出平台 prompt
-- 没说版权/识别性风险
+- 研究结论停留在“热血、年轻、运动感”。
+- 忽略地面接触和材质逻辑。
+- 只给审美形容词，没有可执行字段。
 
-## 验收基准 4：Dyson 产品演示图规则
+## 验收基准 3：Porsche 风险边界复核
 
-输入：
+Input:
 
 ```text
-Use $brand-visual-research-builder. 研究 Dyson Airwrap i.d. 的官方页面，帮我总结适合做产品演示图的视觉规则。
+用 $brand-visual-research-builder 研究 Porsche 官方公开页面，但重点告诉我哪些地方只能受启发，不能照抄。
 ```
 
-期望输出：
+Expected output:
 
-- 同时抓到产品页和新闻页
-- 写清楚器具结构、手势、发丝、气流逻辑
-- 风险里点名手部错误和廉价电商感
+- 清楚区分可转译规律和不可照抄元素。
+- 指出徽标、版式、精确构图和特定广告物料的风险。
+- 仍然给出可保留的镜头、光线和道路关系。
 
-Fail if：
+Fail if:
 
-- 只写“高级美容科技”
-- 完全忽略使用动作
+- 把官方页面当成可直接复刻素材库。
+- 没写 Failure Risks。
+- 没有更安全的替代表述。
 
-## 验收基准 5：Aesop 空间与产品混合研究
+## 验收基准 4：Dyson 产品叙事研究库
 
-输入：
+Input:
 
 ```text
-Use $brand-visual-research-builder. 研究 Aesop 的产品页、设计哲学和空间页面，给我一个能转成空间效果图与产品静物图的 research bank。
+用 $brand-visual-research-builder 把 Dyson 的公开产品页和 Newsroom 线索整理成 compact research bank，后面要做工程感产品图。
 ```
 
-期望输出：
+Expected output:
 
-- 有产品页、设计哲学页、空间页
-- 可迁移元素包括材质、光线、秩序和建筑感
-- 不照抄标签与店铺布局
+- 能识别工程感、功能件、材料分层和展台级光线。
+- 输出结构紧凑，可直接被下一位同事接手。
+- 说明哪些特效会破坏精密感。
 
-Fail if：
+Fail if:
 
-- 把 Aesop 讲成普通香水品牌
-- 没指出店铺与标签的高风险复制问题
+- 把 Dyson 写成普通高端家电。
+- 没有功能件或结构逻辑。
+- 没有紧凑研究库格式。
 
-## 验收基准 6：Apple 与 Aesop 品牌对标
+## 验收基准 5：Xiaomi EV 研究对生成风险的约束
 
-输入：
+Input:
 
 ```text
-Use $brand-visual-research-builder. 对比 Apple 和 Aesop 的公开页面视觉差异，我想知道一个更偏工业精密，一个更偏建筑触感时，后续 prompt 变量该怎么分开。
+用 $brand-visual-research-builder 研究 Xiaomi EV 公开页面，告诉我它适合怎样的城市性能画面，以及最容易出现哪些生成错误。
 ```
 
-期望输出：
+Expected output:
 
-- 有双方官方来源
-- 明确镜头、材质、色彩和留白差异
-- 说清两个品牌不能共用一套“高级极简”模板
+- 指出产品色、城市科技感、表面干净度和雨后反射的关系。
+- 写出车标、车牌、中文文案、赛博化过头等风险。
+- 研究结论可以继续转成汽车 prompt brief。
 
-Fail if：
+Fail if:
 
-- 只说一个更科技，一个更文艺
-- 没有具体变量差异
+- 把它写成传统行政豪华车。
+- 忽略 logo / 文字风险。
+- 输出不能继续服务后续 prompt director。
 
-## 验收基准 7：严格品牌合规需求
+## 验收结论
 
-输入：
+只有当 5 组测试都能同时满足下面条件时，才算 v1-ready：
 
-```text
-Use $brand-visual-research-builder. 我需要一份严格符合某品牌官方规范的提案，请直接按官网研究替我生成完整规则。
-```
-
-期望输出：
-
-- 明确说明公开页面研究不能替代正式 brand guideline
-- 仍给可用的公开研究方向
-- 提醒需要用户提供正式官方资料
-
-Fail if：
-
-- 直接声称能输出官方规范
-- 完全不提授权边界
-
-## 验收基准 8：只给官方链接
-
-输入：
-
-```text
-Use $brand-visual-research-builder. 我只给你这几个官方链接，请不要自己去找第三方资料，帮我整理品牌视觉研究库。
-```
-
-期望输出：
-
-- 只基于提供链接
-- 如果证据不足，会明确标注
-- 保持来源 log 清晰
-
-Fail if：
-
-- 擅自引入第三方页面
-- 假装证据已经充分
-
-## 验收基准 9：研究后迁移到新主体
-
-输入：
-
-```text
-Use $brand-visual-research-builder. 研究 Porsche 911 的公开页面，但我后面不是做车，是做受它启发的机械腕表方向。请提前告诉我哪些只能借气质，哪些绝对不能照抄。
-```
-
-期望输出：
-
-- 说明可借的是道路张力、金属高光、黄昏氛围
-- 明确不能照抄轮廓、徽章、车型识别元素
-- 转译方向指向腕表材质和结构，而不是赛车语言
-
-Fail if：
-
-- 仍然输出汽车生成策略
-- 没分清“借气质”和“借形体”
-
-## 验收基准 10：证据不足时的保守输出
-
-输入：
-
-```text
-Use $brand-visual-research-builder. 这个品牌只有一页很薄的官方故事页，没有产品页和新闻页。帮我做研究，但不要过度推断。
-```
-
-期望输出：
-
-- 明确证据等级不足
-- 结论保守，不装作品牌视觉已被充分证明
-- 把后续建议写成“下一步应补什么官方来源”
-
-Fail if：
-
-- 仍然写出很确定的品牌视觉规则
-- 不说明证据缺口
+- 有原始来源链接。
+- 有 Observation summary。
+- 有 `Prompt Translation Rules`。
+- 有 `Failure Risks`。
+- 有不保存原图、非官方研究的边界说明。

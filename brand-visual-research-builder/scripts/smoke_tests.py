@@ -7,8 +7,8 @@ ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_FILES = [
     "SKILL.md",
     "agents/openai.yaml",
-    "references/research-framework.md",
-    "references/source-intake-and-compliance.md",
+    "references/research-workflow.md",
+    "references/official-source-rules.md",
     "references/prompt-translation-rules.md",
     "references/compact-research-bank.md",
     "references/examples.md",
@@ -18,28 +18,25 @@ REQUIRED_FILES = [
 
 REQUIRED_PHRASES = {
     "SKILL.md": [
-        "核心工作流",
-        "Reference Routing",
         "Compact Research Bank",
-        "只做研究不写 Prompt",
-        "品牌对标",
-    ],
-    "references/source-intake-and-compliance.md": [
-        "不保存",
-        "官方授权",
-        "来源可信度标记",
+        "Prompt Translation Rules",
+        "Failure Risks",
+        "不保存原图",
+        "不宣称官方授权",
     ],
     "references/compact-research-bank.md": [
-        "Apple",
-        "Nike",
-        "Porsche",
-        "Dyson",
-        "Aesop",
+        "Brand 1：Apple",
+        "Brand 2：Nike",
+        "Brand 3：Porsche",
+        "Brand 4：Dyson",
+        "Brand 5：Xiaomi EV",
     ],
     "references/benchmark-suite.md": [
         "验收基准 1",
+        "验收基准 2",
+        "验收基准 3",
+        "验收基准 4",
         "验收基准 5",
-        "Fail if：",
     ],
 }
 
@@ -52,7 +49,7 @@ def main() -> int:
             print(f"- {path}")
         return 1
 
-    failures: list[str] = []
+    failures = []
     for rel_path, phrases in REQUIRED_PHRASES.items():
         text = (ROOT / rel_path).read_text(encoding="utf-8")
         for phrase in phrases:
@@ -60,7 +57,7 @@ def main() -> int:
                 failures.append(f"{rel_path}: missing {phrase!r}")
 
     if failures:
-        print("Smoke tests failed:")
+        print("Smoke test failures:")
         for failure in failures:
             print(f"- {failure}")
         return 1
