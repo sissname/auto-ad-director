@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spatial Installation Prompt Director"
+  short_description: "商业空间美陈、快闪、展陈与沉浸通道 prompt 导演"
+  default_prompt: "Use $spatial-installation-prompt-director to turn a mall, pop-up, exhibition, or immersive corridor brief into spatial prompts and proposal-ready summaries."
