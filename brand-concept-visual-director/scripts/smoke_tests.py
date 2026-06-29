@@ -34,11 +34,11 @@ def main() -> int:
             if marker not in text:
                 failures.append(f"{rel} missing {marker!r}")
     if failures:
-        print("Smoke tests failed:")
+        print("冒烟测试未通过：")
         for item in failures:
             print(f"- {item}")
         return 1
-    print("Smoke tests passed.")
+    print("冒烟测试通过。")
     return 0
 
 

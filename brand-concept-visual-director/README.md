@@ -63,8 +63,8 @@ python .\scripts\validate_v1_readiness.py
 
 ```text
 Skill is valid!
-Smoke tests passed.
-v1 readiness passed.
+冒烟测试通过。
+v1 就绪检查通过。
 ```
 
 ### 4. 再开始真实项目

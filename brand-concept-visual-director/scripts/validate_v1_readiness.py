@@ -45,7 +45,7 @@ def main() -> int:
         if not (ROOT / rel).exists():
             failures.append(f"missing {rel}")
     if failures:
-        print("v1 readiness failed:")
+        print("v1 就绪检查未通过：")
         for item in failures:
             print(f"- {item}")
         return 1
@@ -76,11 +76,11 @@ def main() -> int:
             failures.append(f"reference-and-logo-boundaries.md missing {marker!r}")
 
     if failures:
-        print("v1 readiness failed:")
+        print("v1 就绪检查未通过：")
         for item in failures:
             print(f"- {item}")
         return 1
-    print("v1 readiness passed.")
+    print("v1 就绪检查通过。")
     return 0
 
 
